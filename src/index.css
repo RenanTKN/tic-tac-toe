@@ -38,8 +38,8 @@ ol, ul {
 	float: left;
 	font-size: 30px;
 	font-weight: bold;
-	width: var(--square-size);
-	height: var(--square-size);
+	width: var(--square-size, 50px);
+	height: var(--square-size, 50px);
 	margin-right: -1px;
 	margin-top: -1px;
 	padding: 0;
