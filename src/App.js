@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Board from "./Components/Board";
+import GameInfo from "./Components/GameInfo";
 import "./App.css";
 
 export default () => {
@@ -145,29 +146,14 @@ export default () => {
           />
         </div>
       </div>
-      <div className="game-info">
-        <div className="status">{status}</div>
-        <div className="scoreboard-container">
-          <table className="scoreboard">
-            <thead>
-              <tr>
-                <th className="x">X</th>
-                <th className="o">O</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{xPoints}</td>
-                <td>{oPoints}</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <button className="order-button" onClick={() => handleSortToggle()}>
-          ⇅ {isAscending ? "descending" : "ascending"}
-        </button>
-        <ol>{moves}</ol>
-      </div>
+      <GameInfo
+        status={status}
+        xPoints={xPoints}
+        oPoints={oPoints}
+        handleSortToggle={handleSortToggle}
+        isAscending={isAscending}
+        moves={moves}
+      />
     </div>
   );
 };
